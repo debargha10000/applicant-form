@@ -27,11 +27,11 @@ const ApplicantForm = () => {
         district: "",
         state: "",
       },
-      first_name: "test1551",
-      middle_name: "Student",
-      last_name: "test11",
-      email: "ankur.01234567@gmail.com",
-      contact: "7412589635",
+      first_name: "",
+      middle_name: "",
+      last_name: "",
+      email: "",
+      contact: "",
       gender: "",
       dob: null,
       are_adresses_same: false,
@@ -131,6 +131,7 @@ const ApplicantForm = () => {
 
     setCurrentStep((prev) => prev + 1);
   };
+
   const handlePrevStep = (newData) => {
     setData((prev) => ({ ...prev, ...newData }));
     setCurrentStep((prev) => prev - 1);
@@ -143,7 +144,7 @@ const ApplicantForm = () => {
     <CourseInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
   ];
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="form-container">
@@ -151,27 +152,6 @@ const ApplicantForm = () => {
         <h1>{formTitles[currentStep]}</h1>
         {steps[currentStep]}
       </div>
-      {/* <div className="footer">
-          <button
-            disabled={page === 0}
-            onClick={() => {
-              setPage((currentPage) => currentPage - 1);
-            }}
-          >
-            Prev
-          </button>
-          <button
-            disabled={page === formTitles.length - 1}
-            onClick={() => {
-              setPage((currentPage) => currentPage + 1);
-            }}
-          >
-            Next
-          </button>
-          {page === formTitles.length - 1 ? (
-            <button type="submit">Submit</button>
-          ) : null}
-        </div> */}
     </div>
   );
 };

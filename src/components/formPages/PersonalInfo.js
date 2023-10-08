@@ -16,25 +16,25 @@ const PersonalInfo = (props) => {
     { key: "Other Backward Castes", value: "OBC" },
   ];
 
-  const validationSchema = Yup.object({
-    first_name: Yup.string().required("Required"),
-    middle_name: Yup.string(),
-    last_name: Yup.string().required("Required"),
-    email: Yup.string().email("Invalid email format").required("Required"),
-    contact: Yup.number()
-      .typeError("That doesn't look like a phone number")
-      .positive("A phone number can't start with a minus")
-      .integer("A phone number can't include a decimal point")
-      // .min(10000_00000)
-      .max(99999_99999)
-      .required("A phone number is required"),
-    gender: Yup.string().required("Required"),
-    dob: Yup.date().required("Required"),
-    category: Yup.string().required("Required"),
-    blood_group: Yup.string().required("Required"),
-    aadhar_number: Yup.number().required("Required"),
-    pan_number: Yup.string().required("Required"),
-  });
+  // const perInfoValidSchema = Yup.object({
+  //   first_name: Yup.string().required("Required"),
+  //   // middle_name: Yup.string(),
+  //   last_name: Yup.string().required("Required"),
+  //   // email: Yup.string().email("Invalid email format").required("Required"),
+  //   // contact: Yup.number()
+  //   //   .typeError("That doesn't look like a phone number")
+  //   //   .positive("A phone number can't start with a minus")
+  //   //   .integer("A phone number can't include a decimal point")
+  //   //   // .min(10000_00000)
+  //   //   .max(99999_99999)
+  //   //   .required("A phone number is required"),
+  //   // gender: Yup.string().required("Required"),
+  //   // dob: Yup.date().required("Required"),
+  //   // category: Yup.string().required("Required"),
+  //   // blood_group: Yup.string().required("Required"),
+  //   // aadhar_number: Yup.number().required("Required"),
+  //   // pan_number: Yup.string().required("Required"),
+  // });
 
   const handleSubmit = (values) => {
     props.next(values);
@@ -43,23 +43,25 @@ const PersonalInfo = (props) => {
   return (
     <Formik
       initialValues={props.data}
-      // validationSchema={validationSchema}
+      // validationSchema={perInfoValidSchema}
       onSubmit={handleSubmit}
     >
       {(formik) => {
         return (
           <Form>
-            {/* <FormikControl
+            <FormikControl
               control="input"
-              type="email"
-              label="Email"
-              name="email"
-            /> */}
-            <p>First Name</p>
+              // type="email"
+              label="First Name"
+              name="personal_info.first_name"
+            />
+
+            {/* <p>First Name</p>
             <Field name="personal_info.first_name" />
 
             <p>Last Name</p>
-            <Field name="personal_info.last_name" />
+            <Field name="personal_info.last_name" /> */}
+
             <button type="submit">Next</button>
           </Form>
         );

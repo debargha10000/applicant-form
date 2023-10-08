@@ -35,13 +35,15 @@ const AcademicInfo = (props) => {
       onSubmit={handleSubmit}
       enableReinitialize
     >
-      {(formik) => {
+      {({ values }) => {
         return (
           <Form>
             <p>Mother email</p>
             <Field name="family_info.mother.email" />
 
-            <button type="button">Prev</button>
+            <button type="button" onClick={() => props.prev(values)}>
+              Back
+            </button>
             <button type="submit">Next</button>
           </Form>
         );
