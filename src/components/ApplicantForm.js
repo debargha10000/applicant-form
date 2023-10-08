@@ -107,102 +107,6 @@ const ApplicantForm = () => {
       admission_year: "",
     },
   });
-  const initialValues = {
-    personal_info: {
-      present_address: {
-        street: "",
-        pincode: "",
-        city: "",
-        district: "",
-        state: "",
-      },
-      permanent_address: {
-        street: "",
-        pincode: "",
-        city: "",
-        district: "",
-        state: "",
-      },
-      first_name: "test1551",
-      middle_name: "Student",
-      last_name: "test11",
-      email: "ankur.01234567@gmail.com",
-      contact: "7412589635",
-      gender: "",
-      dob: null,
-      are_adresses_same: false,
-      category: "",
-      blood_group: "",
-      aadhar_number: "",
-      pan_number: "",
-    },
-    family_info: {
-      father: {
-        first_name: "",
-        middle_name: "",
-        last_name: "",
-        email: "",
-        contact: "",
-      },
-      mother: {
-        first_name: "",
-        middle_name: "",
-        last_name: "",
-        email: "",
-        contact: "",
-      },
-      guardian: {
-        office_address: {
-          street: "",
-          pincode: "",
-          city: "",
-          district: "",
-          state: "",
-        },
-        first_name: "",
-        middle_name: "",
-        last_name: "",
-        relation: "",
-        occupation: "",
-        designation: "",
-        office_contact: "",
-        contact: "",
-        income: "",
-        email: "",
-        pan_number: "",
-        aadhar_number: "",
-      },
-    },
-    academic_info: {
-      admission: {
-        exam_name: "",
-        year_of_exam: "",
-        roll_number: "",
-        rank: "",
-      },
-      secondary: {
-        exam_name: "",
-        year_of_exam: "",
-        board: "",
-        aggregate: "",
-        school_name: "",
-      },
-      higher_secondary: {
-        exam_name: "",
-        year_of_exam: "",
-        board: "",
-        aggregate: "",
-        school_name: "",
-      },
-    },
-    course_info: {
-      enrollment_number: "",
-      course_name: "",
-      duration: "",
-      stream: "",
-      admission_year: "",
-    },
-  };
 
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -213,8 +117,18 @@ const ApplicantForm = () => {
     "Course Info",
   ];
 
-  const handleNextStep = (newData) => {
+  const makeRequest = (formData) => {
+    console.log("Form Submitted", formData);
+  };
+
+  const handleNextStep = (newData, final = false) => {
     setData((prev) => ({ ...prev, ...newData }));
+
+    if (final) {
+      makeRequest(newData);
+      return;
+    }
+
     setCurrentStep((prev) => prev + 1);
   };
   const handlePrevStep = (newData) => {
@@ -228,6 +142,8 @@ const ApplicantForm = () => {
     <AcademicInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
     <CourseInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
   ];
+
+  console.log(data);
 
   return (
     <div className="form-container">

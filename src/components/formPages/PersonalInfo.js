@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Formik, Form } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import FormikControl from "../inputComponents/FormikControl";
 
@@ -15,37 +15,6 @@ const PersonalInfo = (props) => {
     { key: "Scheduled Tribes", value: "ST" },
     { key: "Other Backward Castes", value: "OBC" },
   ];
-
-  // const initialValues = {
-  //   present_address: {
-  //     street: "",
-  //     pincode: "",
-  //     city: "",
-  //     district: "",
-  //     state: "",
-  //   },
-  //   permanent_address: {
-  //     street: "",
-  //     pincode: "",
-  //     city: "",
-  //     district: "",
-  //     state: "",
-  //   },
-  //   first_name: "test1551",
-  //   middle_name: "Student",
-  //   last_name: "test11",
-  //   email: "",
-  //   contact: "7412589635",
-  //   gender: "",
-  //   dob: null,
-  //   are_adresses_same: false,
-  //   category: "GN",
-  //   blood_group: "",
-  //   aadhar_number: "",
-  //   pan_number: "",
-  // };
-
-  const initialValues = props.data;
 
   const validationSchema = Yup.object({
     first_name: Yup.string().required("Required"),
@@ -68,71 +37,30 @@ const PersonalInfo = (props) => {
   });
 
   const handleSubmit = (values) => {
-    // console.log("Form data", values);
     props.next(values);
   };
 
-  // const [formValues, setFormValues] = useState(null);
-
   return (
     <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
+      initialValues={props.data}
+      // validationSchema={validationSchema}
       onSubmit={handleSubmit}
-      enableReinitialize
     >
       {(formik) => {
         return (
           <Form>
             {/* <FormikControl
               control="input"
-              label="First Name"
-              name="first_name"
-            />
-            <FormikControl
-              control="input"
-              label="Middle Name"
-              name="middle_name"
-            />
-            <FormikControl control="input" label="Last Name" name="last_name" /> */}
-            <FormikControl
-              control="input"
               type="email"
               label="Email"
               name="email"
-            />
-            {/* <FormikControl
-              control="input"
-              type="number"
-              label="Contact Number"
-              name="contact"
-            />
-            <FormikControl
-              control="radio"
-              label="Gender"
-              name="gender"
-              options={genderOptions}
-            />
-            <FormikControl control="date" label="Date of Birth" name="dob" />
-            <FormikControl
-              control="select"
-              label="Category"
-              name="category"
-              options={categoryOptions}
-            />
-            <FormikControl
-              control="input"
-              label="Blood Group"
-              name="blood_group"
             /> */}
-            {/* <FormikControl control="textarea" label="Bio" name="bio" /> */}
-            <button
-              type="submit"
-              // onClick={() => setFormValues(null)}
-              // disabled={!formik.isValid}
-            >
-              Next
-            </button>
+            <p>First Name</p>
+            <Field name="personal_info.first_name" />
+
+            <p>Last Name</p>
+            <Field name="personal_info.last_name" />
+            <button type="submit">Next</button>
           </Form>
         );
       }}
