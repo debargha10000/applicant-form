@@ -138,10 +138,22 @@ const ApplicantForm = () => {
   };
 
   const steps = [
-    <PersonalInfo next={handleNextStep} data={data} />,
-    <FamilyInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <AcademicInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <CourseInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <PersonalInfo next={handleNextStep} data={data.personal_info} />,
+    <FamilyInfo
+      next={handleNextStep}
+      prev={handlePrevStep}
+      data={data.family_info}
+    />,
+    <AcademicInfo
+      next={handleNextStep}
+      prev={handlePrevStep}
+      data={data.academic_info}
+    />,
+    <CourseInfo
+      next={handleNextStep}
+      prev={handlePrevStep}
+      data={data.course_info}
+    />,
   ];
 
   // console.log(data);
