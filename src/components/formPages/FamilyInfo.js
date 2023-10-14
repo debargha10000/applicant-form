@@ -39,7 +39,7 @@ const FamilyInfo = (props) => {
         return (
           <Form>
             <p>Father email</p>
-            <Field name="family_info.father.email" />
+            <Field name="father.email" />
 
             <button type="button" onClick={() => props.prev(values)}>
               Back

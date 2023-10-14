@@ -27,18 +27,18 @@ const ApplicantForm = () => {
         district: "",
         state: "",
       },
-      first_name: "",
+      first_name: "Ankur",
       middle_name: "",
-      last_name: "",
-      email: "",
-      contact: "",
-      gender: "",
+      last_name: "H",
+      email: "a@g.com",
+      contact: "1234567890",
+      gender: "M",
       dob: null,
       are_adresses_same: false,
-      category: "",
-      blood_group: "",
-      aadhar_number: "",
-      pan_number: "",
+      category: "GN",
+      blood_group: "B+",
+      aadhar_number: "1234567890",
+      pan_number: "x1234567890",
     },
     family_info: {
       father: {
@@ -123,12 +123,10 @@ const ApplicantForm = () => {
 
   const handleNextStep = (newData, final = false) => {
     setData((prev) => ({ ...prev, ...newData }));
-
     if (final) {
       makeRequest(newData);
       return;
     }
-
     setCurrentStep((prev) => prev + 1);
   };
 
@@ -138,22 +136,10 @@ const ApplicantForm = () => {
   };
 
   const steps = [
-    <PersonalInfo next={handleNextStep} data={data.personal_info} />,
-    <FamilyInfo
-      next={handleNextStep}
-      prev={handlePrevStep}
-      data={data.family_info}
-    />,
-    <AcademicInfo
-      next={handleNextStep}
-      prev={handlePrevStep}
-      data={data.academic_info}
-    />,
-    <CourseInfo
-      next={handleNextStep}
-      prev={handlePrevStep}
-      data={data.course_info}
-    />,
+    <PersonalInfo next={handleNextStep} data={data} />,
+    <FamilyInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <AcademicInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <CourseInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
   ];
 
   // console.log(data);
