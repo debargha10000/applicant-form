@@ -4,42 +4,131 @@ import * as Yup from "yup";
 import FormikControl from "../inputComponents/FormikControl";
 
 const FamilyInfo = (props) => {
-  // const validationSchema = Yup.object({
-  //   first_name: Yup.string().required("Required"),
-  //   middle_name: Yup.string(),
-  //   last_name: Yup.string().required("Required"),
-  //   email: Yup.string().email("Invalid email format").required("Required"),
-  //   contact: Yup.number()
-  //     .typeError("That doesn't look like a phone number")
-  //     .positive("A phone number can't start with a minus")
-  //     .integer("A phone number can't include a decimal point")
-  //     // .min(10000_00000)
-  //     .max(99999_99999)
-  //     .required("A phone number is required"),
-  //   gender: Yup.string().required("Required"),
-  //   dob: Yup.date().required("Required"),
-  //   category: Yup.string().required("Required"),
-  //   blood_group: Yup.string().required("Required"),
-  //   aadhar_number: Yup.number().required("Required"),
-  //   pan_number: Yup.string().required("Required"),
-  // });
-
-  const handleSubmit = (values) => {
-    props.next(values);
+  const handleSubmit = (family_info) => {
+    props.next({ family_info });
+    console.log({ family_info });
   };
+  // const famInfoValidSchema = Yup.object{
+
+  // }
 
   return (
     <Formik
-      initialValues={props.data}
-      // validationSchema={validationSchema}
+      initialValues={props.data.family_info}
+      // validationSchema={famInfoValidSchema}
       onSubmit={handleSubmit}
       enableReinitialize
     >
       {({ values }) => {
         return (
           <Form>
-            <p>Father email</p>
-            <Field name="father.email" />
+            <h3>Father</h3>
+            <FormikControl
+              control="input"
+              label="First Name"
+              name="father.first_name"
+            />
+            <FormikControl
+              control="input"
+              label="Middle Name"
+              name="father.middle_name"
+            />
+            <FormikControl
+              control="input"
+              label="Last Name"
+              name="father.last_name"
+            />
+            <FormikControl control="input" label="Email" name="father.email" />
+            <FormikControl
+              control="input"
+              label="Contact No"
+              name="father.contact"
+            />
+
+            <h3>Mother</h3>
+            <FormikControl
+              control="input"
+              label="First Name"
+              name="mother.first_name"
+            />
+            <FormikControl
+              control="input"
+              label="Middle Name"
+              name="mother.middle_name"
+            />
+            <FormikControl
+              control="input"
+              label="Last Name"
+              name="mother.last_name"
+            />
+            <FormikControl control="input" label="Email" name="mother.email" />
+            <FormikControl
+              control="input"
+              label="Contact No"
+              name="mother.contact"
+            />
+
+            <h3>Guardian</h3>
+            <FormikControl
+              control="input"
+              label="First Name"
+              name="guardian.first_name"
+            />
+            <FormikControl
+              control="input"
+              label="Middle Name"
+              name="guardian.middle_name"
+            />
+            <FormikControl
+              control="input"
+              label="Last Name"
+              name="guardian.last_name"
+            />
+            <FormikControl
+              control="input"
+              label="Relation"
+              name="guardian.relation"
+            />
+            <FormikControl
+              control="input"
+              label="Occupation"
+              name="guardian.occupation"
+            />
+            <FormikControl
+              control="input"
+              label="Designation"
+              name="guardian.designation"
+            />
+            <FormikControl
+              control="input"
+              label="Office Contact"
+              name="guardian.office_contact"
+            />
+            <FormikControl
+              control="input"
+              label="Contact No"
+              name="guardian.contact"
+            />
+            <FormikControl
+              control="input"
+              label="Income"
+              name="guardian.income"
+            />
+            <FormikControl
+              control="input"
+              label="Email"
+              name="guardian.email"
+            />
+            <FormikControl
+              control="input"
+              label="Pan Number"
+              name="guardian.pan_number"
+            />
+            <FormikControl
+              control="input"
+              label="Email"
+              name="guardian.aadhar_number"
+            />
 
             <button type="button" onClick={() => props.prev(values)}>
               Back

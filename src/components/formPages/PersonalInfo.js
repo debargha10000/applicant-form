@@ -5,7 +5,7 @@ import FormikControl from "../inputComponents/FormikControl";
 
 const PersonalInfo = (props) => {
   // const { personal_info, ...rest } = props;
-  console.log(props.data);
+  // console.log(props.data);
   const genderOptions = [
     { key: "Male", value: "M" },
     { key: "Female", value: "F" },
@@ -24,9 +24,9 @@ const PersonalInfo = (props) => {
     last_name: Yup.string().required("Required"),
     email: Yup.string().email("Invalid email format").required("Required"),
     contact: Yup.number()
-      // .typeError("That doesn't look like a phone number")
-      // .positive("A phone number can't start with a minus")
-      // .integer("A phone number can't include a decimal point")
+      .typeError("That doesn't look like a phone number")
+      .positive("A phone number can't start with a minus")
+      .integer("A phone number can't include a decimal point")
       // .min(10000_00000)
       // .max(99999_99999)
       .required("A phone number is required"),
@@ -39,9 +39,8 @@ const PersonalInfo = (props) => {
   });
 
   const handleSubmit = (personal_info) => {
-    let values = { personal_info };
-    props.next(values);
-    console.log(values);
+    props.next({ personal_info });
+    console.log({ personal_info });
   };
 
   return (
@@ -105,7 +104,7 @@ const PersonalInfo = (props) => {
               label="PAN Number"
               name="pan_number"
             />
-            <h4>Present Address</h4>
+            <h3>Present Address</h3>
             <FormikControl
               control="input"
               label="Street"
@@ -131,7 +130,7 @@ const PersonalInfo = (props) => {
               label="State"
               name="present_address.state"
             />
-            <h4>Permanent Address</h4>
+            <h3>Permanent Address</h3>
             <FormikControl
               control="input"
               label="Street"
