@@ -142,8 +142,6 @@ const ApplicantForm = () => {
     <CourseInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
   ];
 
-  // console.log(data);
-
   return (
     <div className="form-container">
       <div className="body">

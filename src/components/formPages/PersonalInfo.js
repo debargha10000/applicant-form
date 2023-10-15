@@ -156,7 +156,6 @@ const PersonalInfo = (props) => {
               label="State"
               name="permanent_address.state"
             />
-            <FormikControl control="textarea" label="Bio" name="bio" />
 
             <button type="submit">Next</button>
           </Form>
