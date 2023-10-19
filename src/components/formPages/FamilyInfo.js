@@ -9,6 +9,9 @@ const FamilyInfo = (props) => {
     console.log({ family_info });
   };
   // const famInfoValidSchema = Yup.object{
+  //   father contact info
+  // job
+  // guardian all mandatory
 
   // }
 
@@ -126,7 +129,7 @@ const FamilyInfo = (props) => {
             />
             <FormikControl
               control="input"
-              label="Email"
+              label="Aadhar Number"
               name="guardian.aadhar_number"
             />
 
