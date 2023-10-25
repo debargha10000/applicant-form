@@ -1,3 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  /* max-width: 100%; */
+}
+
 .App {
   display: flex;
   justify-content: center;
@@ -7,6 +29,9 @@ label {
   font-weight: bold;
   display: flex;
   margin-bottom: 5px;
+}
+input[type="radio"] {
+  margin-right: 5px;
 }
 
 input + label {
@@ -55,17 +80,39 @@ select {
   background: #ffffff;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
   width: 1000px;
-  padding: 0 20px;
+  padding: 0 2rem;
   margin: 2rem 5rem;
 }
-
+.form-container-dark {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-90deg, #470044, #000070);
+}
+.form-content-dark {
+  border-radius: 50px;
+  width: 1000px;
+  padding: 0 2rem;
+  margin: 2rem 5rem;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
 .page-title {
+  font-size: 2rem;
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
 .sub-heading {
-  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem 0.5rem;
 }
 
 .grid-col-3 {
@@ -80,10 +127,9 @@ select {
 .btns {
   display: flex;
   justify-content: center;
-  padding: 0 auto;
 }
 .btn {
-  margin: 1rem;
+  margin: 1rem 1rem 2rem 1rem;
   border: none;
   font-size: 1.2rem;
   background: hsl(233, 24%, 85%);
@@ -96,6 +142,7 @@ select {
   background: hsl(235, 17%, 26%);
   color: #fff;
 }
+
 @media (max-width: 999px) {
   .form-content {
     width: 100%;
@@ -108,5 +155,11 @@ select {
   .grid-col-2 {
     /* display: flex; */
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-content {
+    margin: 1.5rem;
   }
 }
