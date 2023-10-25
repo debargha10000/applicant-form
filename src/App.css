@@ -77,25 +77,19 @@ select {
 
 .form-content {
   border-radius: 50px;
-  background: #ffffff;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
   width: 1000px;
   padding: 0 2rem;
   margin: 2rem 5rem;
 }
-.form-container-dark {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(-90deg, #470044, #000070);
+
+/* dark-theme  */
+
+.dark-back {
+  background: linear-gradient(-90deg, hsl(303, 90%, 8%), hsl(240, 95%, 8%));
 }
-.form-content-dark {
-  border-radius: 50px;
-  width: 1000px;
-  padding: 0 2rem;
-  margin: 2rem 5rem;
-  background: rgba(255, 255, 255, 0.25);
+.dark-front {
+  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -103,6 +97,16 @@ select {
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: white;
 }
+.dark-front input,
+.dark-front textarea,
+.dark-front select {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+}
+
 .page-title {
   font-size: 2rem;
   text-align: center;

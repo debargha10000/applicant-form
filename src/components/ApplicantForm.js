@@ -143,8 +143,8 @@ const ApplicantForm = () => {
   ];
 
   return (
-    <div className="form-container-dark">
-      <div className="form-content-dark">
+    <div className="form-container dark-back ">
+      <div className="form-content dark-front ">
         <h1 className="page-title">{formTitles[currentStep]}</h1>
         <div className="hello">{steps[currentStep]}</div>
       </div>
