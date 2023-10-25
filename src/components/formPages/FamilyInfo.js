@@ -25,118 +25,176 @@ const FamilyInfo = (props) => {
       {({ values }) => {
         return (
           <Form>
-            <h3>Father</h3>
-            <FormikControl
-              control="input"
-              label="First Name"
-              name="father.first_name"
-            />
-            <FormikControl
-              control="input"
-              label="Middle Name"
-              name="father.middle_name"
-            />
-            <FormikControl
-              control="input"
-              label="Last Name"
-              name="father.last_name"
-            />
-            <FormikControl control="input" label="Email" name="father.email" />
-            <FormikControl
-              control="input"
-              label="Contact No"
-              name="father.contact"
-            />
+            <h3 className="sub-heading">Father</h3>
+            <div className="grid-col-3">
+              <FormikControl
+                control="input"
+                label="First Name"
+                name="father.first_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Middle Name"
+                name="father.middle_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Last Name"
+                name="father.last_name"
+                type="text"
+              />
+            </div>
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="Email"
+                name="father.email"
+                type="email"
+              />
+              <FormikControl
+                control="input"
+                label="Contact No"
+                name="father.contact"
+                type="number"
+              />
+            </div>
 
-            <h3>Mother</h3>
-            <FormikControl
-              control="input"
-              label="First Name"
-              name="mother.first_name"
-            />
-            <FormikControl
-              control="input"
-              label="Middle Name"
-              name="mother.middle_name"
-            />
-            <FormikControl
-              control="input"
-              label="Last Name"
-              name="mother.last_name"
-            />
-            <FormikControl control="input" label="Email" name="mother.email" />
-            <FormikControl
-              control="input"
-              label="Contact No"
-              name="mother.contact"
-            />
+            <h3 className="sub-heading">Mother</h3>
+            <div className="grid-col-3">
+              <FormikControl
+                control="input"
+                label="First Name"
+                name="mother.first_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Middle Name"
+                name="mother.middle_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Last Name"
+                name="mother.last_name"
+                type="text"
+              />
+            </div>
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="Email"
+                name="mother.email"
+                type="email"
+              />
+              <FormikControl
+                control="input"
+                label="Contact No"
+                name="mother.contact"
+                type="number"
+              />
+            </div>
 
-            <h3>Guardian</h3>
-            <FormikControl
-              control="input"
-              label="First Name"
-              name="guardian.first_name"
-            />
-            <FormikControl
-              control="input"
-              label="Middle Name"
-              name="guardian.middle_name"
-            />
-            <FormikControl
-              control="input"
-              label="Last Name"
-              name="guardian.last_name"
-            />
-            <FormikControl
-              control="input"
-              label="Relation"
-              name="guardian.relation"
-            />
-            <FormikControl
-              control="input"
-              label="Occupation"
-              name="guardian.occupation"
-            />
-            <FormikControl
-              control="input"
-              label="Designation"
-              name="guardian.designation"
-            />
-            <FormikControl
-              control="input"
-              label="Office Contact"
-              name="guardian.office_contact"
-            />
-            <FormikControl
-              control="input"
-              label="Contact No"
-              name="guardian.contact"
-            />
-            <FormikControl
-              control="input"
-              label="Income"
-              name="guardian.income"
-            />
-            <FormikControl
-              control="input"
-              label="Email"
-              name="guardian.email"
-            />
-            <FormikControl
-              control="input"
-              label="Pan Number"
-              name="guardian.pan_number"
-            />
-            <FormikControl
-              control="input"
-              label="Aadhar Number"
-              name="guardian.aadhar_number"
-            />
+            <h3 className="sub-heading">Guardian</h3>
+            <div className="grid-col-3">
+              <FormikControl
+                control="input"
+                label="First Name"
+                name="guardian.first_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Middle Name"
+                name="guardian.middle_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Last Name"
+                name="guardian.last_name"
+                type="text"
+              />
+            </div>
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="Relation"
+                name="guardian.relation"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Occupation"
+                name="guardian.occupation"
+                type="text"
+              />
+            </div>
+            <div className="grid-col-3">
+              <FormikControl
+                control="input"
+                label="Designation"
+                name="guardian.designation"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Office Contact"
+                name="guardian.office_contact"
+                type="number"
+              />
+              <FormikControl
+                control="input"
+                label="Income"
+                name="guardian.income"
+                type="number"
+              />
+            </div>
 
-            <button type="button" onClick={() => props.prev(values)}>
-              Back
-            </button>
-            <button type="submit">Next</button>
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="Email"
+                name="guardian.email"
+                type="email"
+              />
+              <FormikControl
+                control="input"
+                label="Contact No"
+                name="guardian.contact"
+                type="number"
+              />
+            </div>
+
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="Pan Number"
+                name="guardian.pan_number"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Aadhar Number"
+                name="guardian.aadhar_number"
+                type="number"
+              />
+            </div>
+
+            <div className="btns">
+              <button
+                type="button"
+                className="btn"
+                onClick={() => props.prev(values)}
+              >
+                Back
+              </button>
+              <button type="submit" className="btn">
+                Next
+              </button>
+            </div>
           </Form>
         );
       }}

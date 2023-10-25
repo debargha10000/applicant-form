@@ -19,85 +19,115 @@ const AcademicInfo = (props) => {
       {({ values }) => {
         return (
           <Form>
-            <h3>Admission</h3>
+            <h3 className="sub-heading">Admission</h3>
 
-            <FormikControl
-              control="input"
-              label="Exam Name"
-              name="admission.exam_name"
-            />
-            <FormikControl
-              control="input"
-              label="Year of Exam"
-              name="admission.year_of_exam"
-            />
-            <FormikControl
-              control="input"
-              label="Roll Number"
-              name="admission.roll_number"
-            />
-            <FormikControl control="input" label="Rank" name="admission.rank" />
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="Exam Name"
+                name="admission.exam_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Year of Exam"
+                name="admission.year_of_exam"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Roll Number"
+                name="admission.roll_number"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Rank"
+                name="admission.rank"
+                type="text"
+              />
+            </div>
 
-            <h3>Secondary Exam</h3>
-
-            <FormikControl
-              control="input"
-              label="Exam Name"
-              name="secondary.exam_name"
-            />
-            <FormikControl
-              control="input"
-              label="Year of Exam"
-              name="secondary.year_of_exam"
-            />
-            <FormikControl
-              control="input"
-              label="Board"
-              name="secondary.board"
-            />
-            <FormikControl
-              control="input"
-              label="Aggregate"
-              name="secondary.aggregate"
-            />
+            <h3 className="sub-heading">Secondary Exam</h3>
             <FormikControl
               control="input"
               label="School Name"
               name="secondary.school_name"
+              type="text"
             />
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="Exam Name"
+                name="secondary.exam_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Year of Exam"
+                name="secondary.year_of_exam"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Board"
+                name="secondary.board"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Aggregate"
+                name="secondary.aggregate"
+                type="text"
+              />
+            </div>
 
-            <h3>Higher Secondary Exam</h3>
-
-            <FormikControl
-              control="input"
-              label="Exam Name"
-              name="higher_secondary.exam_name"
-            />
-            <FormikControl
-              control="input"
-              label="Year of Exam"
-              name="higher_secondary.year_of_exam"
-            />
-            <FormikControl
-              control="input"
-              label="Board"
-              name="higher_secondary.board"
-            />
-            <FormikControl
-              control="input"
-              label="Aggregate"
-              name="higher_secondary.aggregate"
-            />
+            <h3 className="sub-heading">Higher Secondary Exam</h3>
             <FormikControl
               control="input"
               label="School Name"
               name="higher_secondary.school_name"
+              type="text"
             />
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="Exam Name"
+                name="higher_secondary.exam_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Year of Exam"
+                name="higher_secondary.year_of_exam"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Board"
+                name="higher_secondary.board"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Aggregate"
+                name="higher_secondary.aggregate"
+                type="text"
+              />
+            </div>
 
-            <button type="button" onClick={() => props.prev(values)}>
-              Back
-            </button>
-            <button type="submit">Next</button>
+            <div className="btns">
+              <button
+                type="button"
+                className="btn"
+                onClick={() => props.prev(values)}
+              >
+                Back
+              </button>
+              <button type="submit" className="btn">
+                Next
+              </button>
+            </div>
           </Form>
         );
       }}

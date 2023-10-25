@@ -51,113 +51,156 @@ const PersonalInfo = (props) => {
     >
       {({ values }) => {
         return (
-          <Form>
-            <FormikControl
-              control="input"
-              label="First Name"
-              name="first_name"
-            />
-            <FormikControl
-              control="input"
-              label="Middle Name"
-              name="middle_name"
-            />
-            <FormikControl control="input" label="Last Name" name="last_name" />
-            <FormikControl
-              control="input"
-              type="email"
-              label="Email"
-              name="email"
-            />
-            <FormikControl
-              control="input"
-              type="number"
-              label="Contact Number"
-              name="contact"
-            />
-            <FormikControl
-              control="radio"
-              label="Gender"
-              name="gender"
-              options={genderOptions}
-            />
-            <FormikControl control="date" label="Date of Birth" name="dob" />
-            <FormikControl
-              control="select"
-              label="Category"
-              name="category"
-              options={categoryOptions}
-            />
-            <FormikControl
-              control="input"
-              label="Blood Group"
-              name="blood_group"
-            />
-            <FormikControl
-              control="input"
-              type="number"
-              label="Aadhar Number"
-              name="aadhar_number"
-            />
-            <FormikControl
-              control="input"
-              label="PAN Number"
-              name="pan_number"
-            />
-            <h3>Present Address</h3>
+          <Form className="form">
+            <div className="grid-col-3">
+              <FormikControl
+                control="input"
+                label="First Name"
+                name="first_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Middle Name"
+                name="middle_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Last Name"
+                name="last_name"
+                type="text"
+              />
+            </div>
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                type="email"
+                label="Email"
+                name="email"
+              />
+              <FormikControl
+                control="input"
+                type="number"
+                label="Contact Number"
+                name="contact"
+              />
+
+              <FormikControl
+                control="radio"
+                label="Gender"
+                name="gender"
+                options={genderOptions}
+              />
+              <FormikControl
+                control="date"
+                label="Date of Birth"
+                name="dob"
+                type="date"
+              />
+
+              <FormikControl
+                control="select"
+                label="Category"
+                name="category"
+                options={categoryOptions}
+              />
+              <FormikControl
+                control="input"
+                label="Blood Group"
+                name="blood_group"
+                type="text"
+              />
+
+              <FormikControl
+                control="input"
+                type="number"
+                label="Aadhar Number"
+                name="aadhar_number"
+              />
+              <FormikControl
+                control="input"
+                label="PAN Number"
+                name="pan_number"
+                type="text"
+              />
+            </div>
+
+            <h3 className="sub-heading">Present Address</h3>
             <FormikControl
               control="input"
               label="Street"
               name="present_address.street"
+              type="text"
             />
-            <FormikControl
-              control="input"
-              label="Pincode"
-              name="present_address.pincode"
-            />
-            <FormikControl
-              control="input"
-              label="City"
-              name="present_address.city"
-            />
-            <FormikControl
-              control="input"
-              label="District"
-              name="present_address.district"
-            />
-            <FormikControl
-              control="input"
-              label="State"
-              name="present_address.state"
-            />
-            <h3>Permanent Address</h3>
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="City"
+                name="present_address.city"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Pincode"
+                name="present_address.pincode"
+                type="number"
+              />
+
+              <FormikControl
+                control="input"
+                label="District"
+                name="present_address.district"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="State"
+                name="present_address.state"
+                type="text"
+              />
+            </div>
+
+            <h3 className="sub-heading">Permanent Address</h3>
             <FormikControl
               control="input"
               label="Street"
               name="permanent_address.street"
+              type="text"
             />
-            <FormikControl
-              control="input"
-              label="Pincode"
-              name="permanent_address.pincode"
-            />
-            <FormikControl
-              control="input"
-              label="City"
-              name="permanent_address.city"
-            />
-            <FormikControl
-              control="input"
-              label="District"
-              name="permanent_address.district"
-            />
-            <FormikControl
-              control="input"
-              label="State"
-              name="permanent_address.state"
-            />
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="City"
+                name="permanent_address.city"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Pincode"
+                name="permanent_address.pincode"
+                type="number"
+              />
 
-            <button type="submit">Next</button>
+              <FormikControl
+                control="input"
+                label="District"
+                name="permanent_address.district"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="State"
+                name="permanent_address.state"
+                type="text"
+              />
+            </div>
+
+            <div className="btns">
+              <button type="submit" className="btn">
+                Next
+              </button>
+            </div>
           </Form>
         );
       }}

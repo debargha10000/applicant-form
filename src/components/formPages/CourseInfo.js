@@ -7,6 +7,7 @@ const FamilyInfo = (props) => {
   const handleSubmit = (course_info) => {
     props.next({ course_info }, true);
     console.log({ course_info });
+    // console.log(props.data);
   };
 
   return (
@@ -23,24 +24,47 @@ const FamilyInfo = (props) => {
               control="input"
               label="Enrollment Number"
               name="enrollment_number"
+              type="number"
             />
-            <FormikControl
-              control="input"
-              label="Course Name"
-              name="course_name"
-            />
-            <FormikControl control="input" label="Duration" name="duration" />
-            <FormikControl control="input" label="Stream" name="stream" />
-            <FormikControl
-              control="input"
-              label="Admission Year"
-              name="admission_year"
-            />
+            <div className="grid-col-2">
+              <FormikControl
+                control="input"
+                label="Course Name"
+                name="course_name"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Duration"
+                name="duration"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Stream"
+                name="stream"
+                type="text"
+              />
+              <FormikControl
+                control="input"
+                label="Admission Year"
+                name="admission_year"
+                type="text"
+              />
+            </div>
 
-            <button type="button" onClick={() => props.prev(values)}>
-              Back
-            </button>
-            <button type="submit">Submit</button>
+            <div className="btns">
+              <button
+                type="button"
+                className="btn"
+                onClick={() => props.prev(values)}
+              >
+                Back
+              </button>
+              <button type="submit" className="btn">
+                Submit
+              </button>
+            </div>
           </Form>
         );
       }}

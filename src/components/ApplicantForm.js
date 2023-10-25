@@ -144,9 +144,9 @@ const ApplicantForm = () => {
 
   return (
     <div className="form-container">
-      <div className="body">
-        <h1>{formTitles[currentStep]}</h1>
-        {steps[currentStep]}
+      <div className="form-content">
+        <h1 className="page-title">{formTitles[currentStep]}</h1>
+        <div className="hello">{steps[currentStep]}</div>
       </div>
     </div>
   );
