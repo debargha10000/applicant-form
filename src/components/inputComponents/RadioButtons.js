@@ -19,6 +19,7 @@ const RadioButtons = (props) => {
                   {...field}
                   value={option.value}
                   checked={field.value === option.value}
+                  {...rest}
                 />
                 <label htmlFor={option.value}>{option.key}</label>
               </React.Fragment>

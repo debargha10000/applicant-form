@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 import FormikControl from "../inputComponents/FormikControl";
 
 const AcademicInfo = (props) => {
@@ -8,6 +8,8 @@ const AcademicInfo = (props) => {
     props.next({ academic_info });
     console.log({ academic_info });
   };
+
+  let year = new Date().getFullYear().toString();
 
   return (
     <Formik
@@ -27,24 +29,30 @@ const AcademicInfo = (props) => {
                 label="Exam Name"
                 name="admission.exam_name"
                 type="text"
+                required
               />
               <FormikControl
                 control="input"
                 label="Year of Exam"
                 name="admission.year_of_exam"
-                type="text"
+                type="number"
+                min={year - 10}
+                max={year}
+                required
               />
               <FormikControl
                 control="input"
                 label="Roll Number"
                 name="admission.roll_number"
                 type="text"
+                required
               />
               <FormikControl
                 control="input"
                 label="Rank"
                 name="admission.rank"
-                type="text"
+                type="number"
+                required
               />
             </div>
 
@@ -54,6 +62,7 @@ const AcademicInfo = (props) => {
               label="School Name"
               name="secondary.school_name"
               type="text"
+              required
             />
             <div className="grid-col-2">
               <FormikControl
@@ -61,24 +70,30 @@ const AcademicInfo = (props) => {
                 label="Exam Name"
                 name="secondary.exam_name"
                 type="text"
+                required
               />
               <FormikControl
                 control="input"
                 label="Year of Exam"
                 name="secondary.year_of_exam"
-                type="text"
+                type="number"
+                min={year - 10}
+                max={year}
+                required
               />
               <FormikControl
                 control="input"
                 label="Board"
                 name="secondary.board"
                 type="text"
+                required
               />
               <FormikControl
                 control="input"
                 label="Aggregate"
                 name="secondary.aggregate"
-                type="text"
+                type="number"
+                required
               />
             </div>
 
@@ -88,6 +103,7 @@ const AcademicInfo = (props) => {
               label="School Name"
               name="higher_secondary.school_name"
               type="text"
+              required
             />
             <div className="grid-col-2">
               <FormikControl
@@ -95,24 +111,30 @@ const AcademicInfo = (props) => {
                 label="Exam Name"
                 name="higher_secondary.exam_name"
                 type="text"
+                required
               />
               <FormikControl
                 control="input"
                 label="Year of Exam"
                 name="higher_secondary.year_of_exam"
-                type="text"
+                type="number"
+                min={year - 10}
+                max={year}
+                required
               />
               <FormikControl
                 control="input"
                 label="Board"
                 name="higher_secondary.board"
                 type="text"
+                required
               />
               <FormikControl
                 control="input"
                 label="Aggregate"
                 name="higher_secondary.aggregate"
-                type="text"
+                type="number"
+                required
               />
             </div>
 

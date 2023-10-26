@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 import FormikControl from "../inputComponents/FormikControl";
 
 const FamilyInfo = (props) => {
@@ -9,6 +9,8 @@ const FamilyInfo = (props) => {
     console.log({ course_info });
     // console.log(props.data);
   };
+
+  let year = new Date().getFullYear().toString();
 
   return (
     <Formik
@@ -25,6 +27,7 @@ const FamilyInfo = (props) => {
               label="Enrollment Number"
               name="enrollment_number"
               type="number"
+              required
             />
             <div className="grid-col-2">
               <FormikControl
@@ -32,24 +35,32 @@ const FamilyInfo = (props) => {
                 label="Course Name"
                 name="course_name"
                 type="text"
+                required
               />
               <FormikControl
                 control="input"
                 label="Duration"
                 name="duration"
-                type="text"
+                type="number"
+                min="1"
+                max="10"
+                required
               />
               <FormikControl
                 control="input"
                 label="Stream"
                 name="stream"
                 type="text"
+                required
               />
               <FormikControl
                 control="input"
                 label="Admission Year"
                 name="admission_year"
-                type="text"
+                type="number"
+                min={year - 10}
+                max={year}
+                required
               />
             </div>
 

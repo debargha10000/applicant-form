@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 import FormikControl from "./inputComponents/FormikControl";
 
 import {
@@ -32,13 +32,13 @@ const ApplicantForm = () => {
       last_name: "H",
       email: "a@g.com",
       contact: "1234567890",
-      gender: "M",
-      dob: null,
+      gender: "",
+      dob: undefined,
       are_adresses_same: false,
       category: "GN",
       blood_group: "B+",
-      aadhar_number: "1234567890",
-      pan_number: "x1234567890",
+      aadhar_number: "",
+      pan_number: "",
     },
     family_info: {
       father: {
@@ -141,10 +141,27 @@ const ApplicantForm = () => {
     <AcademicInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
     <CourseInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
   ];
+  const darkToggle = () => {
+    const bg = document.getElementById("bg");
+    const fg = document.getElementById("fg");
+    const tg = document.getElementById("tg");
+    // const btns = document.getElementsByTagName("button");
+    bg.classList.toggle("dark-back");
+    fg.classList.toggle("dark-front");
+    tg.classList.toggle("dark");
+
+    // for (const btn of btns) {
+    //   btn.classList.toggle("dark");
+    // }
+  };
 
   return (
-    <div className="form-container dark-back ">
-      <div className="form-content dark-front ">
+    <div className="form-container  " id="bg">
+      <h1 className="form-heading">Applicant Form</h1>
+      <button type="button" className="toggle " id="tg" onClick={darkToggle}>
+        Toggle Light/Dark Mode
+      </button>
+      <div className="form-content " id="fg">
         <h1 className="page-title">{formTitles[currentStep]}</h1>
         <div className="hello">{steps[currentStep]}</div>
       </div>
